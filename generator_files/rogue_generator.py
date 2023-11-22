@@ -168,13 +168,14 @@ def create_level(dimensions):
     
     return G
 
-# function that calls the appropriate replacement function
+
 def check_for_empty_nodes(G):
     for node in G.nodes:
         if G.nodes[node]['type'] == 'empty':
             return True
     return False
-
+    
+# function that calls the appropriate replacement function
 def execute_replacement(G, function_to_call, source_node):
     if function_to_call in globals() and callable(globals()[function_to_call]):
         function = globals()[function_to_call]
